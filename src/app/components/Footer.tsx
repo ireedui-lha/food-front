@@ -6,11 +6,8 @@ export default function Footer() {
       <div className="bg-[#18181B] w-[100vw] flex  ">
         {Array.from(Array(7)).map((_: any, index: any) => {
           return (
-            <div className="w-[100vw] ">
-              <h1
-                key={index}
-                className="bg-red-600 h-[79px]  items-center m-auto justify-center mt-[60px] text-white font-semibold text-2xl flex flex-wrap "
-              >
+            <div key={index} className="w-[100vw] ">
+              <h1 className="bg-red-600 h-[79px]  items-center m-auto justify-center mt-[60px] text-white font-semibold text-2xl flex flex-wrap ">
                 fresh fast delivered
               </h1>
             </div>
