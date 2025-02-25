@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Userlayout({
   children,
@@ -6,7 +7,7 @@ export default function Userlayout({
   children: ReactNode;
 }>) {
   return (
-    <div className="flex w-screen justify-between m-auto ">
+    <div className="w-[1440px] h-[1024px] m-auto flex gap-[24px] justify-center items-center">
       <div>{children}</div>
       <div>
         <img src="./hurgelt.svg" alt="" />

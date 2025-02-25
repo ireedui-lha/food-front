@@ -1,13 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
-export default function Page() {
+"use client";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
+import FristPage from "./FirstPage";
+import SecondPage from "./SecondPage";
+export default function Signup() {
+  const [ChangePage, setChangePage] = useState<number>(0);
+  const FormStep = [FristPage, SecondPage][ChangePage];
+  const next = () => {
+    setChangePage(ChangePage + 1);
+  };
   return (
-    <div>
-      <h1>Create your account</h1>
-      <p>Sign up to explore favorite dishes</p>
-      <Input />
-      <Button className="w-[416px]"> Let's go</Button>
-    </div>
+    <AnimatePresence initial={false}>
+      <motion.div
+        initial={{ opacity: 0, x: 80, scale: 1, y: 10 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1 }}
+        className=" w-[480px] h-[655px] bg-[#FFF] rounded-[8px] p-[32px] flex flex-col justify-between"
+      >
+        <div>
+          <FormStep next={next} />
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
